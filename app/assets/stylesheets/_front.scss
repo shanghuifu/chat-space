@@ -1,0 +1,171 @@
+.flash-box {
+    color: $white;
+    font-size: 1rem;
+    font-weight: lighter;
+    text-align: center;
+    width: 100vw;
+    .notice {
+      background-color: $lightBlue;
+    }
+}
+
+.wrapper {
+
+  margin: 0;
+  padding: 0;
+  .chat-side {
+    float: left;
+    height: 100vh;
+    width: 300px;
+    .side-header {
+      background-color: $darkGray;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      &__box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        color: $white;
+        &__username {
+          font-size: 16px;
+          margin: 0;
+          padding: 0;
+        }
+        &__menu {
+          display: flex;
+          a {color: $white;}
+          &__new-group {
+            margin-left: 0.3rem;
+            }
+          &__edit-user {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    .groups {
+      background-color: $lightGray;
+      height: calc(100vh - 120px);
+      padding: 20px 20px 0;
+      color: $white;
+      overflow: scroll;
+      .group {
+        margin-bottom: 40px;
+        &__group-name {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__latest-message {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .chat-main {
+    float: left;
+    width: calc(100vw - 300px);
+    height: 100vh;
+    .main-header {
+      background-color: $white;
+      height: 99px;
+      border-bottom: 1px solid $borderGray;
+      display: flex;
+      padding: 0 40px;
+      &__left-box {
+        padding-top: 35px;
+        &__current-group {
+          color: $textBlack;
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+        &__member-list {
+          color: $textLGray;
+          display: flex;
+          font-size: 12px;
+        }
+      }
+      &__edit-btn {
+        height: 38px;
+        line-height: 40px;
+        padding: 0 20px;
+        margin-top: 30px;
+        border: solid 1px $lightBlue;
+        color: $lightBlue;
+        text-decoration: none;
+        position: absolute;
+        right: 40px;
+      }
+    }
+    .messages {
+      height: calc(100vh - 282px);
+      background: #fafafa;
+      padding: 46px 40px;
+      overflow: scroll;
+      .message {
+        padding-bottom: 40px;
+        &__upper-info {
+          display: flex;
+          margin-bottom: 10px;
+          &__talker {
+            color: $textGray;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            color: $textLGray;
+            font-size: 12px;
+            margin-left: 10px;
+          }
+        }
+        &__text {
+          color: $textGray;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .form {
+      background-color: $Gray;
+      height: 50px;
+      padding: 20px 40px;
+      .new-message {
+        display: flex;
+        .input-box {
+          position: relative;
+          width: 100%;
+          display: flex;
+          &__text {
+            height: 50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+            border-style: none;
+            color: $textGray;
+          }
+          &__image {
+            font-size: 1.3rem;
+            top: 10px;
+            position: absolute;
+            cursor: pointer;
+            right: 10px;
+            &__select-btn {
+              display: none;
+            }
+          }
+        }
+        .submit-btn {
+          width: 100px;
+          padding: 0 30px;
+          height: 50px;
+          background-color: $lightBlue;
+          margin-left: 15px;
+          cursor: pointer;
+          color: $white;
+        }
+      }
+    }
+  }
+}
