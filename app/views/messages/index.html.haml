@@ -3,48 +3,5 @@
     グループを作成しました
 
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        .side-header__box__username
-          = current_user.name
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
-            =link_to "#" do
-              = fa_icon "edit"
-          %li.side-header__box__menu__edit-user
-            =link_to edit_user_path(current_user) do
-              = fa_icon "cog"
-    .groups
-      .group
-        .group__group-name<
-          aaaaaaaaa
-        .group__latest-message<
-          おはようございます
-  .chat-main
-    .main-header
-      .main-header__left-box
-        %h2.main-header__left-box__current-group<
-          aaaaaaaaa
-        %ul.main-header__left-box__member-list<
-          Member : naoki
-      =link_to "#" do
-        .main-header__edit-btn<
-          Edit
-    .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker<
-            naoki
-          %p.message__upper-info__date<
-            2019/10/23(Wed) 19:40:00
-        %p.message__text<
-          おはようございます
-    .form
-      .new-message
-        .input-box
-          %input.input-box__text{type: "text", placeholder: "type a message"}
-          %label.input-box__image{for: "upload-icon"}
-            = fa_icon "image"
-            %input.input-box__image__select-btn{type: "file", id: "upload-icon"}
-        %input.submit-btn{type: "submit", value: "Send"}
+  = render 'layouts/side'
+  = render 'layouts/main'
