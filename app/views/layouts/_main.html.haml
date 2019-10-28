@@ -5,12 +5,18 @@
         aaaaaaaaa
       %ul.main-header__left-box__member-list<
         Member : naoki
-    =link_to "#" do
+    = link_to '#' do
       .main-header__edit-btn<
         Edit
   .messages
     .message
-      = render 'layouts/chat'
+      .message__upper-info
+        %p.message__upper-info__talker<
+          naoki
+        %p.message__upper-info__date<
+          2019/10/23(Wed) 19:40:00
+      %p.message__text<
+        おはようございます
   .form
     .new-message
       .input-box

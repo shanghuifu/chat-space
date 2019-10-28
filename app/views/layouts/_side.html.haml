@@ -11,5 +11,10 @@
           =link_to edit_user_path(current_user) do
             = fa_icon "cog"
   .groups
-    .group
-      = render 'layouts/group'
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__group-name
+            = group.name
+          .group__latest-message
+            no messages.
