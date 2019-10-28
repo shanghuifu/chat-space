@@ -38,10 +38,11 @@
       background-color: $side_blue_light;
       height: calc(100vh - 120px);
       padding: 20px 20px 0;
-      color: $white;
       overflow: scroll;
       .group {
         margin-bottom: 40px;
+        a {color: $white;}
+        a {text-decoration: none;}
         &__group-name {
           font-size: 15px;
           margin-bottom: 5px;
