@@ -2,10 +2,13 @@
   .main-header
     .main-header__left-box
       %h2.main-header__left-box__current-group<
-        aaaaaaaaa
+        = @group.name
       %ul.main-header__left-box__member-list<
-        Member : naoki
-    = link_to '#' do
+        member : 
+        - @group.users.each do |member|
+          = member.name
+          ,
+    = link_to edit_group_path(@group) do
       .main-header__edit-btn<
         Edit
   .messages
