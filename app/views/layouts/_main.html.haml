@@ -18,10 +18,10 @@
       %p.message__text<
         おはようございます
   .form
-    .new-message
-      .input-box
-        %input.input-box__text{type: "text", placeholder: "type a message"}
-        %label.input-box__image{for: "upload-icon"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__image
+        = f.label :image, class: 'form__image__icon' do
           = fa_icon "image"
-          %input.input-box__image__select-btn{type: "file", id: "upload-icon"}
-      %input.submit-btn{type: "submit", value: "Send"}
+          = f.file_field :image, class: 'form__image__icon__hidden'
+      = f.submit 'Send', class: 'submit'

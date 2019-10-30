@@ -120,39 +120,37 @@
       background-color: $Gray;
       height: 50px;
       padding: 20px 40px;
-      .new-message {
-        display: flex;
-        .input-box {
-          position: relative;
-          width: 100%;
-          display: flex;
-          &__text {
-            height: 50px;
-            width: 100%;
-            padding: 0 40px 0 10px;
-            border-style: none;
-            color: $textGray;
-          }
-          &__image {
-            font-size: 1.3rem;
-            top: 10px;
-            position: absolute;
-            cursor: pointer;
-            right: 10px;
-            &__select-btn {
-              display: none;
-            }
+      position: relative;
+      &__message {
+        float: left;
+        height: 50px;
+        width: calc(100% - 200px);
+        padding: 0 40px 0 10px;
+        border: none;
+        color: $textGray;
+      }
+      &__image {
+        background-color: $white;
+        font-size: 1.3rem;
+        cursor: pointer;
+        float: left;
+        padding-right: 10px;
+        &__icon {
+          line-height: 50px;
+          &__hidden {
+            display: none;
           }
         }
-        .submit-btn {
-          width: 100px;
-          padding: 0 30px;
-          height: 50px;
-          background-color: $light_blue;
-          margin-left: 15px;
-          cursor: pointer;
-          color: $white;
-        }
+      }
+      .submit {
+        float: right;
+        width: 100px;
+        padding: 0 30px;
+        height: 50px;
+        background-color: $light_blue;
+        margin-left: 15px;
+        cursor: pointer;
+        color: $white;
       }
     }
   }
