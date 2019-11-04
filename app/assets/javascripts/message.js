@@ -2,11 +2,7 @@ $(function(){
 
   function buildMessage(message){
     var image = ""
-    if(message.image.url != null) {
-      image = `<img class="message__content" src="${message.image.url}">`}
-    else {
-      image = ""
-    }
+    if(message.image.url != null ? image = `<img class="message__content" src="${message.image.url}">` : image = "");
     var html = `<div class="message">
                   <div class="message__info">
                     <p class="message__info__talker">${message.name}</p>
@@ -35,8 +31,8 @@ $(function(){
     .done(function(message){
       var html = buildMessage(message);
       $(".messages").append(html);
-      $('#message_content').val('');
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+      $('.new_message')[0].reset();
     })
     .fail(function(){
       alert("メッセージの送信に失敗しました");
