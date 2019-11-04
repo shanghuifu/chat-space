@@ -94,8 +94,8 @@
       padding: 46px 40px;
       overflow: scroll;
       .message {
-        padding-bottom: 40px;
-        &__upper-info {
+        padding-top: 40px;
+        &__info {
           display: flex;
           margin-bottom: 10px;
           &__talker {
@@ -109,7 +109,7 @@
             margin-left: 10px;
           }
         }
-        &__text {
+        &__content {
           color: $textGray;
           font-size: 14px;
           margin-bottom: 10px;
