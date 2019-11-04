@@ -89,13 +89,13 @@
       }
     }
     .messages {
-      height: calc(100vh - 282px);
+      height: calc(100vh - 236px);
       background: #fafafa;
-      padding: 46px 40px;
+      padding: 46px 40px 0px;
       overflow: scroll;
       .message {
         padding-bottom: 40px;
-        &__upper-info {
+        &__info {
           display: flex;
           margin-bottom: 10px;
           &__talker {
@@ -109,7 +109,7 @@
             margin-left: 10px;
           }
         }
-        &__text {
+        &__content {
           color: $textGray;
           font-size: 14px;
           margin-bottom: 10px;
