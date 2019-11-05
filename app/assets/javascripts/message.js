@@ -1,7 +1,6 @@
 $(function(){
   function buildMessage(message){
-    var image = ""
-    if(message.image.url ? image = `<img class="message__content" src="${message.image.url}">` : image = "");
+    var image = message.image.url ? image = `<img class="message__content" src="${message.image.url}">` : image = "";
     var html = `
       <div class="message" data-id="${message.id}">
         <div class="message__info">
@@ -37,7 +36,7 @@ $(function(){
         }
       })
       .fail(function() {
-        console.log('error');
+        alert("自動更新に失敗しました");
       });
     }
   };
