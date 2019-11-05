@@ -15,36 +15,32 @@ $(function(){
       </div>`;
     return html;
   }
-  $(window).on('load',function(){
+  
+  var reloadMessages = function() {
     if(document.URL.match(/messages/)) {
-      var reloadMessages = function() {
-        last_message_id = $('.message').last().attr('data-id');
-        $.ajax({
-          url: 'api/messages',
-          type: 'get',
-          dataType: 'json',
-          data: {id: last_message_id}
-        })
-        .done(function(messages) {
-          if (messages.length !== 0) {
-            messages.forEach(function(message) {
-              var html = buildMessage(message);
-              $(".messages").append(html);
-              $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
-            });
-          } else {
-            return false;
-          }
-        })
-        .fail(function() {
-          console.log('error');
-        });
-      };
-      setInterval(reloadMessages, 5000);
-    } else {
-      return false
+      last_message_id = $('.message').last().attr('data-id');
+      $.ajax({
+        url: 'api/messages',
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        if (messages.length !== 0) {
+          messages.forEach(function(message) {
+            var html = buildMessage(message);
+            $(".messages").append(html);
+            $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+          });
+        } else {
+          return false;
+        }
+      })
+      .fail(function() {
+        console.log('error');
+      });
     }
-  });
+  };
   
 
   $('#new_message').on('submit', function(e){
@@ -69,4 +65,6 @@ $(function(){
       alert("メッセージの送信に失敗しました");
     })
   })
+
+  setInterval(reloadMessages, 5000);
 });
