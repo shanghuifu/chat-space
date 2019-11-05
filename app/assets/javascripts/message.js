@@ -1,6 +1,6 @@
 $(function(){
   function buildMessage(message){
-    var image = message.image.url ? image = `<img class="message__content" src="${message.image.url}">` : image = "";
+    var image = message.image.url ? `<img class="message__content" src="${message.image.url}">` : "";
     var html = `
       <div class="message" data-id="${message.id}">
         <div class="message__info">
