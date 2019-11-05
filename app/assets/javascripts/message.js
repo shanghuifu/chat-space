@@ -3,16 +3,17 @@ $(function(){
   function buildMessage(message){
     var image = ""
     if(message.image.url != null ? image = `<img class="message__content" src="${message.image.url}">` : image = "");
-    var html = `<div class="message">
-                  <div class="message__info">
-                    <p class="message__info__talker">${message.name}</p>
-                    <p class="message__info__date">${message.date}</p>
-                  </div>
-                  <div class="message__content">
-                    ${message.content}
-                  </div>
-                  ${image}
-                </div>`
+    var html = `
+      <div class="message">
+        <div class="message__info">
+          <p class="message__info__talker">${message.name}</p>
+          <p class="message__info__date">${message.date}</p>
+        </div>
+        <div class="message__content">
+          ${message.content}
+        </div>
+        ${image}
+      </div>`;
     return html
   }
 
