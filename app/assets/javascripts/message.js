@@ -1,4 +1,4 @@
-$(function(){
+$(documetn).on('turbolinks:load', function(){
   function buildMessage(message){
     var image = message.image.url ? `<img class="message__content" src="${message.image.url}">` : "";
     var html = `
