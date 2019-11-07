@@ -36,11 +36,15 @@ $(document).on('turbolinks:load', function() {
       dataType: 'json'
     })
     .done(function(users) {
-      
       $("#user-search-result").empty();
+      var member = $(".chat-group-user").map(function(){
+        return $(this).data('id');
+      }).toArray();
       if (users.length !== 0) {
         users.forEach(function(user) {
-          addUser(user);
+          if( member.indexOf(user.id) !== 0 ) {
+            addUser(user);
+          }
         });
       } else if (input.length == 0) {
         return false;
