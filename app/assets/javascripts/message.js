@@ -71,5 +71,4 @@ $(document).on('turbolinks:load', function(){
   })
 
   setInterval(reloadMessages, 5000);
-  $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight} );
 });
